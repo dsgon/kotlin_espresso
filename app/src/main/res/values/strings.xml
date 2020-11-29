@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Kotlin_espresso</string>
+    <string name="email_title">Email</string>
+    <string name="email_hint">email@domain.com</string>
+    <string name="pass_hint">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">SignUp</string>
+    <string name="username">Username</string>
+    <string name="repeat_pass">Repeat Password</string>
+    <string name="register">Register</string>
+    <string name="already_member">already a member?</string>
+    <string name="options_preferences">Preferences</string>
+    <string name="option_about_us">About Us</string>
+    <string name="option_logout">Logout</string>
+    <string name="github">Github - David Gonzalez</string>
+    <string name="about_us">Work in Progress is a initiative from David Gonzalez to teach about Automation Tools, Python programming and Microsoft Azure.
+        \n\nThis app is a demo to learn how to use Espresso to Automate Kotlin and/or Java projects.
+        \n\nYou could find the source code on:
+    </string>
+    <string name="title_options">Options</string>
+    <string name="title_programmer">Programmer</string>
+    <string name="title_qa">QA</string>
+    <string name="title_automation">Automation</string>
 </resources>
