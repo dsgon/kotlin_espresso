@@ -1,4 +1,5 @@
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.test.espresso.Espresso
 
 import androidx.test.espresso.action.ViewActions
@@ -9,6 +10,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.R
 import com.kotlin.espresso.core.helper.ErrorMessage
+import com.kotlin.espresso.steps.StepsSignUp
 import com.kotlin.espresso.views.LoginActivity
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
@@ -61,8 +63,9 @@ class LoginActivityTest {
         Espresso.closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.btn_login)).check(ViewAssertions.matches(
             ViewMatchers.isDisplayed())).perform(ViewActions.click())
-        Espresso.onView(ViewMatchers.withText(ErrorMessage.LOGIN_ERROR)).
-        inRoot(RootMatchers.withDecorView(not(`is`(activityRule.activity.window.decorView)))).check(ViewAssertions.matches(
-            ViewMatchers.isDisplayed()))
+//        Espresso.onView(ViewMatchers.withText(ErrorMessage.LOGIN_ERROR)).
+//        inRoot(RootMatchers.withDecorView(not(`is`(activityRule.activity.window.decorView)))).check(ViewAssertions.matches(
+//            ViewMatchers.isDisplayed()))
+        StepsSignUp().validateLoginErrorMessage(activityRule as ActivityTestRule<AppCompatActivity>)
     }
 }

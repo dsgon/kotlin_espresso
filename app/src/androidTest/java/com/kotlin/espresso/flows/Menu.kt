@@ -9,6 +9,7 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.R
+import com.kotlin.espresso.steps.StepsSignUp
 import com.kotlin.espresso.views.HomeActivity
 import com.kotlin.espresso.views.MenuOptions
 import org.hamcrest.Description
@@ -29,7 +30,7 @@ class PreferencesActivityTest {
 
     @Before
     fun setup(){
-        openMenu()
+        StepsSignUp().openMenu()
     }
 
     @Test
@@ -58,20 +59,7 @@ class PreferencesActivityTest {
         }
     }
 
-    private fun openMenu(){
-        var menu = Espresso.onView(Matchers.allOf(
-            ViewMatchers.withContentDescription("More options"),
-            childAtPosition(
-                childAtPosition(
-                    ViewMatchers.withId(R.id.action_bar),
-                    position = 1
-                ),
-                position = 0
-            ),
-            ViewMatchers.isDisplayed()
-        ))
-        menu.perform(click())
-    }
+
 
     private fun selectOptionMenu(menu_option:String){
         var option = Espresso.onView(Matchers.allOf(
