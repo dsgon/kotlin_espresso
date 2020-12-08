@@ -21,4 +21,9 @@
     <string name="title_programmer">Programmer</string>
     <string name="title_qa">QA</string>
     <string name="title_automation">Automation</string>
+    <string name="title_espresso">Espresso</string>
+    <string name="title_kotlin">Kotlin</string>
+    <string name="title_android">Android Studio</string>
+    <string name="title_junit">JUnit</string>
+    <string name="courses">Courses</string>
 </resources>

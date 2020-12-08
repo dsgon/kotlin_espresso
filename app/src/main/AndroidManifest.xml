@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kotlin.espresso">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".views.WelcomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -31,6 +32,8 @@
         <activity android:name=".views.HomeActivity" />
         <activity android:name=".views.AboutUsActivity"/>
         <activity android:name=".views.PreferenceActivity"/>
+        <activity android:name=".views.ListActivity"/>
+        <activity android:name=".views.CourseActivity"/>
     </application>
 
 </manifest>

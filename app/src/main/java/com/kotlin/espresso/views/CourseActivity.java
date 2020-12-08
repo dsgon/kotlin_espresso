@@ -4,20 +4,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kotlin.espresso.R;
+import com.kotlin.espresso.core.data.CourseInfo;
+import com.kotlin.espresso.core.helper.ImageHandler;
 
-public class HomeActivity extends AppCompatActivity {
+
+
+public class CourseActivity extends AppCompatActivity {
+
+    ImageView imageCourse;
+    TextView titleCourse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_course);
+        imageCourse = findViewById(R.id.main_image_course);
+        titleCourse = findViewById(R.id.main_title_course);
+        loadInfo();
     }
 
     @Override
@@ -28,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent ;
+        Intent intent;
         switch (item.getItemId()){
             case  R.id.option_preferences:
                 intent = new Intent(this, PreferenceActivity.class);
@@ -50,10 +60,8 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToList(View v){
-        Intent intent = new Intent(this, ListActivity.class);
-        startActivity(intent);
-        finish();
+    private void loadInfo(){
+        imageCourse.setImageBitmap(ImageHandler.getImageFromUrl(CourseInfo.getInstance().getImageUrl()));
+        titleCourse.setText(CourseInfo.getInstance().getTitle());
     }
-
 }

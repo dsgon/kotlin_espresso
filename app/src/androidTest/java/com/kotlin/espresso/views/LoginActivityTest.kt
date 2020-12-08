@@ -63,9 +63,6 @@ class LoginActivityTest {
         Espresso.closeSoftKeyboard()
         Espresso.onView(ViewMatchers.withId(R.id.btn_login)).check(ViewAssertions.matches(
             ViewMatchers.isDisplayed())).perform(ViewActions.click())
-//        Espresso.onView(ViewMatchers.withText(ErrorMessage.LOGIN_ERROR)).
-//        inRoot(RootMatchers.withDecorView(not(`is`(activityRule.activity.window.decorView)))).check(ViewAssertions.matches(
-//            ViewMatchers.isDisplayed()))
         StepsSignUp().validateLoginErrorMessage(activityRule as ActivityTestRule<AppCompatActivity>)
     }
 }
