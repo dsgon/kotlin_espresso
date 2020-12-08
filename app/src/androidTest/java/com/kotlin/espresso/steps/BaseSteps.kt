@@ -3,7 +3,6 @@ package com.kotlin.espresso.steps
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
@@ -12,6 +11,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
 
 import com.kotlin.espresso.pages.CommonsElements
+import com.kotlin.espresso.views.LoginActivity
 import org.hamcrest.*
 import org.hamcrest.CoreMatchers.not
 
@@ -26,7 +26,7 @@ open class BaseSteps {
         Espresso.pressBack()
     }
 
-    protected fun validateToastMessage(activityRule : ActivityTestRule<AppCompatActivity>, message : Matcher<View>?){
+    protected fun validateToastMessage(activityRule: ActivityTestRule<LoginActivity>, message: Matcher<View>?){
         Espresso.onView(message).inRoot(
             RootMatchers.withDecorView(not(
                 CoreMatchers.`is`(activityRule.activity.window.decorView)

@@ -22,6 +22,13 @@ import org.junit.Rule
 import org.junit.Test
 
 class PreferencesActivityTest {
+/*
+    1.- Validaciones completa de Formulario de Registro
+    2.- Validaciones completa de formulario de Login
+    3.- Nuevo usuario con la aplicacion desde cero (Welcome Activity) va a la vista de registro y se registra, va a preferencias, activa la opcion QA y Programmer, luego va a la opcion de Cursos y selecciona el curso de Git
+    4.- Usuario que ya existe, ingresa a la app, va al listado de cursos, luego a Preferencias, apaga la opcion Automation y enciende la de QA, regresa al listado, abre el curso de JUnit y luego hace logout
+
+ */
 
     @Rule @JvmField
     var activityRule = ActivityTestRule<HomeActivity>(

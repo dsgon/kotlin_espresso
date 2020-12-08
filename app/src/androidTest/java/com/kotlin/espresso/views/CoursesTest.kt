@@ -1,8 +1,10 @@
 package com.kotlin.espresso.views
 
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
@@ -34,6 +36,10 @@ class CoursesTest {
             Espresso.onView(ViewMatchers.withId(R.id.main_image_course)).check(
                 ViewAssertions.matches(
                     ViewMatchers.isDisplayed()))
+        }
+
+        fun onpenCourseInfo() {
+            // Espresso.onView(ViewMatchers.withId(R.id.list_courses)).check(ViewAssertion(matches()))
         }
 
 }
