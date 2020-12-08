@@ -1,8 +1,9 @@
-package com.kotlin.espresso.views
+package com.kotlin.espresso.test.views
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.steps.StepsSignUp
+import com.kotlin.espresso.views.SignUpActivity
 import org.junit.Rule
 import org.junit.Test
 

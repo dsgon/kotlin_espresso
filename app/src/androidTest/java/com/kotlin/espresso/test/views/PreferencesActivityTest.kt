@@ -1,4 +1,4 @@
-package com.kotlin.espresso.views
+package com.kotlin.espresso.test.views
 
 import androidx.test.espresso.Espresso
 
@@ -7,6 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.R
+import com.kotlin.espresso.views.PreferenceActivity
 
 import org.junit.Rule
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.kotlin.espresso.flows
+package com.kotlin.espresso.test.flows
 
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.R
 import com.kotlin.espresso.steps.StepsSignUp
 import com.kotlin.espresso.views.HomeActivity
-import com.kotlin.espresso.views.MenuOptions
+import com.kotlin.espresso.enums.MenuOptions
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers

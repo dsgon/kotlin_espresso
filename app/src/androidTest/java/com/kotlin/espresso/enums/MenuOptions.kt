@@ -1,4 +1,4 @@
-package com.kotlin.espresso.views
+package com.kotlin.espresso.enums
 
 enum class MenuOptions (var value : String){
 
