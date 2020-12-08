@@ -30,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         courses = new GenerateData().generateData();
-        ListView listMatches = (ListView) findViewById(R.id.list);
+        ListView listMatches = (ListView) findViewById(R.id.list_courses);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
