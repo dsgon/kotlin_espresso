@@ -18,7 +18,7 @@ import org.hamcrest.CoreMatchers.not
 
 open class BaseSteps {
 
-    fun closeKeyboard(){
+    fun closeSoftKeyboard(){
         Espresso.closeSoftKeyboard()
     }
 
@@ -33,6 +33,10 @@ open class BaseSteps {
             ))).check(
             ViewAssertions.matches(
             ViewMatchers.isDisplayed()))
+    }
+
+    protected fun validateErrorOnField(element: Matcher<View>?, error: String){
+        Espresso.onView(element).check(ViewAssertions.matches(ViewMatchers.hasErrorText(error)))
     }
 
      fun openMenu(){

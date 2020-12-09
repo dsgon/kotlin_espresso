@@ -10,4 +10,13 @@ class ErrorMessages {
     fun getLoginError(): Matcher<View>?{
         return ViewMatchers.withText(ErrorMessage.LOGIN_ERROR)
     }
+
+    fun getRegisterError(): Matcher<View>?{
+        return ViewMatchers.withText(ErrorMessage.REGISTER_ERROR)
+    }
+
+    fun getGeneralError(): Matcher<View>?{
+        return ViewMatchers.withText(ErrorMessage.GENERAL_ERROR)
+    }
+
 }
