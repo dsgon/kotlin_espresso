@@ -1,6 +1,9 @@
 package com.kotlin.espresso.steps
 
 
+import android.app.Activity
+import android.app.PendingIntent.getActivity
+import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +13,11 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
-
 import com.kotlin.espresso.pages.CommonsElements
+import com.kotlin.espresso.views.HomeActivity
 import org.hamcrest.*
 import org.hamcrest.CoreMatchers.not
+import org.junit.Rule
 
 
 open class BaseSteps {
@@ -21,6 +25,7 @@ open class BaseSteps {
     fun closeKeyboard(){
         Espresso.closeSoftKeyboard()
     }
+
 
     fun pressBack(){
         Espresso.pressBack()
@@ -34,6 +39,7 @@ open class BaseSteps {
             ViewAssertions.matches(
             ViewMatchers.isDisplayed()))
     }
+
 
      fun openMenu(){
         var menu = Espresso.onView(

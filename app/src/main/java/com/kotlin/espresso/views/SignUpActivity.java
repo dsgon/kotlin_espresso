@@ -51,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, ErrorMessage.GENERAL_ERROR,Toast.LENGTH_LONG).show();
+          //  Toast.makeText(this, ErrorMessage.GENERAL_ERROR,Toast.LENGTH_LONG).show();
         }
     }
 
