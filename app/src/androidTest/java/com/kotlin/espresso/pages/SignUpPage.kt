@@ -5,7 +5,7 @@ import com.kotlin.espresso.R
 import androidx.test.espresso.matcher.ViewMatchers
 import org.hamcrest.Matcher
 
-class PageSignUp {
+class SignUpPage {
 
     var inputUser = R.id.input_user
 

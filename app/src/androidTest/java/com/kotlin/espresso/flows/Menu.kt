@@ -9,7 +9,7 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.R
-import com.kotlin.espresso.steps.StepsSignUp
+import com.kotlin.espresso.steps.SignUpSteps
 import com.kotlin.espresso.views.HomeActivity
 import com.kotlin.espresso.views.MenuOptions
 import org.hamcrest.Description
@@ -30,7 +30,7 @@ class PreferencesActivityTest {
 
     @Before
     fun setup(){
-        StepsSignUp().openMenu()
+        SignUpSteps().openMenu()
     }
 
     @Test

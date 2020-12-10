@@ -2,7 +2,7 @@ package com.kotlin.espresso.views
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.test.rule.ActivityTestRule
-import com.kotlin.espresso.steps.StepsSignUp
+import com.kotlin.espresso.steps.SignUpSteps
 import org.junit.Rule
 import org.junit.Test
 
@@ -16,7 +16,7 @@ class SignUpTest {
 
     @Test
     fun signUpUser(){
-        var steps =StepsSignUp()
+        var steps =SignUpSteps()
         steps.setUser("DavidSGH")
         steps.validateLoginErrorMessage(activityRule as ActivityTestRule<AppCompatActivity>)
 

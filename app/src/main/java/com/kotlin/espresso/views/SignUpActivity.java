@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
-
+    //metodo de accion que se le alimenta la siguiente vista que va a ser seguida despues de signup para empezar la activity
     public void registerUser(View v){
         if (validateForm()) {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);

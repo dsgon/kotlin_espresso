@@ -1,16 +1,15 @@
 package com.kotlin.espresso.steps
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.rule.ActivityTestRule
 import com.kotlin.espresso.pages.ErrorMessages
-import com.kotlin.espresso.pages.PageSignUp
+import com.kotlin.espresso.pages.SignUpPage
 
-class StepsSignUp : BaseSteps() {
+class SignUpSteps : BaseSteps() {
 
-    var page = PageSignUp()
+    var page = SignUpPage()
 
     fun setUser(user : String){
         Espresso.onView(
