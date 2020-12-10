@@ -21,4 +21,8 @@ class StepsSignUp : BaseSteps() {
     fun validateLoginErrorMessage(activityRule : ActivityTestRule<AppCompatActivity>){
         validateToastMessage(activityRule,ErrorMessages().getLoginError())
     }
+
+
+
+
 }

@@ -9,7 +9,7 @@ class PageSignUp {
 
     var inputUser = R.id.input_user
 
-    fun getInputUser(): Matcher<View>? {
+        fun getInputUser(): Matcher<View>? {
         return  ViewMatchers.withId(inputUser)
     }
 }

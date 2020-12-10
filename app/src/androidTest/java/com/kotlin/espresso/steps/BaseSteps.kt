@@ -10,6 +10,7 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.ActivityTestRule
+import com.kotlin.espresso.R
 
 import com.kotlin.espresso.pages.CommonsElements
 import org.hamcrest.*
@@ -35,7 +36,26 @@ open class BaseSteps {
             ViewMatchers.isDisplayed()))
     }
 
-     fun openMenu(){
+
+
+    protected fun selectOptionMenu(menu_option:String){
+        var option = Espresso.onView(Matchers.allOf(
+                ViewMatchers.withId(R.id.title), ViewMatchers.withText(menu_option),
+                childAtPosition(
+                        childAtPosition(
+                                ViewMatchers.withId(R.id.content),
+                                position = 0
+                        ),
+                        position = 0
+                ),
+                ViewMatchers.isDisplayed()
+        ))
+        option.perform(ViewActions.click())
+    }
+
+
+
+    fun openMenu(){
         var menu = Espresso.onView(
             Matchers.allOf(
             ViewMatchers.withContentDescription("More options"),
@@ -51,8 +71,10 @@ open class BaseSteps {
         menu.perform(ViewActions.click())
     }
 
+
+
     private fun childAtPosition(
-        parentMatcher: Matcher<View>, position: Int
+            parentMatcher: Matcher<View>, position: Int
     ): Matcher<View> {
 
         return object : TypeSafeMatcher<View>() {
@@ -68,5 +90,4 @@ open class BaseSteps {
             }
         }
     }
-
 }
