@@ -37,6 +37,12 @@ class WelcomeActivityTest {
       //  Espresso.onView(navigationIconMatcher())
         Espresso.onView(ViewMatchers.withContentDescription("More Options")).check(ViewAssertions.matches(ViewMatchers.isDisplayed())).perform(ViewActions.click())
         Espresso.onView(ViewMatchers.withId(R.id.list_view)).check(ViewAssertions.matches(ViewMatchers.isDisplayed())).perform(ViewActions.click())
+
+        /*
+        No tuve tiempo de poder terminar estos scenarios por el kebab menu. Me ocupe mucho en el trabajo y mi parametrizacion necesita tiempo que no alcance a dedicarle,
+        debido a un hot fix que salio el lunes y hemos estado en jornadas anormales de trabajo.
+        Aun asi te agradezco David, si no quedo seleccionado, esto me ha servido de base para las pruebas en dispositivos moviles con Android sin duda.
+         */
     }
 
     @Test
