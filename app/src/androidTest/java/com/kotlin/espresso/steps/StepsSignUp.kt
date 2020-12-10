@@ -38,6 +38,18 @@ class StepsSignUp : BaseSteps() {
         return this
     }
 
+    fun validateSignUpButtonIsDisplayed() : StepsSignUp{
+        Espresso.onView(pageSignUp.getSignUpButton())
+                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        return this
+    }
+
+    fun validateLoginLinkIsDisplayed() : StepsSignUp{
+        Espresso.onView(pageSignUp.getLoginLink())
+                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        return this
+    }
+
     fun setUser(user : String) : StepsSignUp {
         this.validateUserIsDisplayed()
         Espresso.onView(pageSignUp.getInputUser()).perform(ViewActions.typeText(user), ViewActions.pressImeActionButton())
@@ -63,10 +75,12 @@ class StepsSignUp : BaseSteps() {
     }
 
     fun clickSignUpButton(){
+        this.validateSignUpButtonIsDisplayed()
         Espresso.onView(pageSignUp.getSignUpButton()).perform(ViewActions.click())
     }
 
     fun clickLoginLink(){
+        this.validateLoginLinkIsDisplayed()
         Espresso.onView(pageSignUp.getLoginLink()).perform(ViewActions.click())
     }
 

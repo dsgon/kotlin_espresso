@@ -9,6 +9,9 @@ import com.kotlin.espresso.views.SignUpActivity
 import org.junit.Rule
 import org.junit.Test
 
+/**
+ * Validaciones completa de Formulario de Registro
+ */
 class SignUpTestPOM {
 
     @Rule @JvmField
@@ -96,4 +99,5 @@ class SignUpTestPOM {
                 .validateGeneralErrorMessage(activityRule as ActivityTestRule<AppCompatActivity>)
 
     }
+
 }
