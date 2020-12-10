@@ -4,6 +4,7 @@ package com.kotlin.espresso.steps
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
@@ -18,40 +19,56 @@ import org.hamcrest.CoreMatchers.not
 
 open class BaseSteps {
 
-    fun closeKeyboard(){
+    fun closeKeyboard() {
         Espresso.closeSoftKeyboard()
     }
 
-    fun pressBack(){
+    fun pressBack() {
         Espresso.pressBack()
     }
 
-    protected fun validateToastMessage(activityRule: ActivityTestRule<LoginActivity>, message: Matcher<View>?){
+    /* TODO how to implement this ?
+    fun clearText(element: Matcher<View>?): Matchers {
+        return Espresso.onView(element).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+            .perform(ViewActions.clearText())
+    }
+*/
+
+    protected fun validateToastMessage(
+        activityRule: ActivityTestRule<LoginActivity>,
+        message: Matcher<View>?
+    ) {
         Espresso.onView(message).inRoot(
-            RootMatchers.withDecorView(not(
-                CoreMatchers.`is`(activityRule.activity.window.decorView)
-            ))).check(
+            RootMatchers.withDecorView(
+                not(
+                    CoreMatchers.`is`(activityRule.activity.window.decorView)
+                )
+            )
+        ).check(
             ViewAssertions.matches(
-            ViewMatchers.isDisplayed()))
+                ViewMatchers.isDisplayed()
+            )
+        )
     }
 
-     fun openMenu(){
+    fun openMenu() {
         var menu = Espresso.onView(
             Matchers.allOf(
-            ViewMatchers.withContentDescription("More options"),
-            childAtPosition(
+                ViewMatchers.withContentDescription("More options"),
                 childAtPosition(
-                    CommonsElements().getMenu(),
-                    position = 1
+                    childAtPosition(
+                        CommonsElements().getMenu(),
+                        position = 1
+                    ),
+                    position = 0
                 ),
-                position = 0
-            ),
-            ViewMatchers.isDisplayed()
-        ))
+                ViewMatchers.isDisplayed()
+            )
+        )
         menu.perform(ViewActions.click())
     }
 
-    private fun childAtPosition(
+    fun childAtPosition(
         parentMatcher: Matcher<View>, position: Int
     ): Matcher<View> {
 

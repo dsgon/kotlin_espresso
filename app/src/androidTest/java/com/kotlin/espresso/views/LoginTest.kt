@@ -18,7 +18,13 @@ class LoginTest {
     @Test
     fun loginVisible() {
         val steps = StepsLogin()
-        steps.loginPageVisible()
+        steps.loginPageVisible("email@domain.com", "Password")
+    }
+
+    @Test
+    fun loginMessagesValidation() {
+        val steps = StepsLogin()
+        steps.loginMessageValidation(activityRule)
     }
 
     @Test
@@ -28,9 +34,15 @@ class LoginTest {
     }
 
     @Test
-    fun loginMessagesValidation() {
+    fun loginEmptyField() {
         val steps = StepsLogin()
-        steps.loginMessageValidation(activityRule)
+        steps.loginEmptyFields(
+            "The field Email cannot be empty", "The field Password cannot be empty",
+            "The Email is not valid", "The Password must be contain 8 characters"
+        )
     }
+
+
+
 
 }
